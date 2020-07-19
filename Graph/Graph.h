@@ -12,7 +12,7 @@ typedef struct {
 
 //2.Adjacent List
 typedef struct ArcNode {
-	int adjVex;
+	int adjVex;//adjacent Vertex's no in vertices
 	struct ArcNode* next;
 	//InfoType info;
 }ArcNode;
@@ -37,7 +37,7 @@ typedef struct ArcNode2 {
 typedef struct VNode2 {
 	VertexType data;
 	ArcNode2* firstIn, * firstOut;
-}VNode;
+}VNode2;
 
 typedef struct {
 	VNode2 xList[MaxVertexNum];
@@ -61,3 +61,5 @@ typedef struct {
 	VNode3 adjMutiList[MaxVertexNum];
 	int vexNum, arcNum;
 }AMLGraph;
+
+
