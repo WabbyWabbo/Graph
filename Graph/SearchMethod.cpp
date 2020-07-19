@@ -19,6 +19,19 @@ void BFS(ALGraph G, int v) {
 	}
 }
 
+void BFSTraverse(ALGraph G) {
+	for (int i = 0; i < G.vexNum; i++)
+	{
+		visited[i] = false;
+	}
+	//in case that G is not connected
+	for (int i = 0; i < G.vexNum; i++)
+	{
+		if(!visited[i])
+			BFS(G, i);
+	}
+}
+
 //Depth-First-Search
 void DFS(ALGraph G, int v) {
 	visit(G, v);
@@ -30,13 +43,26 @@ void DFS(ALGraph G, int v) {
 	}
 }
 
+void DFSTraverse(ALGraph G) {
+	for (int i = 0; i < G.vexNum; i++)
+	{
+		visited[i] = false;
+	}
+	//in case that G is not connected
+	for (int i = 0; i < G.vexNum; i++)
+	{
+		if(!visited[i])
+			DFS(G, i);
+	}
+}
+
 //test method
 int main(void) {
 	ALGraph G1 = CreateOneInstance();
-	BFS(G1, 0);
+	BFSTraverse(G1);
 	cout << "\n--------\n";
 	ALGraph G2 = CreateOneInstance();
-	DFS(G2, 0);
+	DFSTraverse(G2);
 
 	return 0;
 }
